@@ -1,11 +1,12 @@
 import urllib3
-    
+from urllib.parse import unquote_plus
+   
 from bs4 import BeautifulSoup
 from requests import get
 
 
-#teste comm
 _URL="http://galdino.sytes.net:8080/04_Documents/Casa%20do%20Codigo/" 
+#_URL="http://galdino.sytes.net:8080/04_Documents/"
 
 urls = []
 names = []
@@ -30,11 +31,8 @@ def main():
         download(url,name)  
 
 def download(url, file_name):
-    # open in binary mode
     with open(file_name, "wb") as file:
-        # get request
-        response = get(url)
-        # write to file
+        response = get(unquote_plus(url,'utf-8'))
         file.write(response.content)
 
 
