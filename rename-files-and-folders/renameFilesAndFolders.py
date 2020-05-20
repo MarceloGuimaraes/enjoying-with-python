@@ -45,11 +45,12 @@ def main(args):
 
 def montaParser():
     parser = argparse.ArgumentParser(description='Search and rename char in files/folders')
-    parser.add_argument('--search', "-s", required = True, help = "word to search")
-    parser.add_argument('--replace', "-r", required = True, help = "word to replace")
     parser.add_argument('--directory', "-d",nargs="?", const = True, help = "Enable rename in directories")
-    parser.add_argument('--files', "-f", nargs="?", const = True, help = "Enable rename in files") 
-    parser.add_argument('--path', "-p", required = True, help = "path to search")
+    #parser.add_argument('--search', "-s", required = True, help = "word to search")
+    #parser.add_argument('--replace', "-r", required = True, help = "word to replace")
+    #parser.add_argument('--files', "-f", nargs="?", const = True, help = "Enable rename in files") 
+    #parser.add_argument('--path', "-p", required = True, help = "path to search")
+
 
     return parser.parse_args()
 
